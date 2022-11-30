@@ -1,8 +1,7 @@
-/**/node_modules/
+/ciel_simulator/node_modules/
 /**/package-lock.json
 /**/.parcel-cache/
-/**/dist/
-yarn.lock
 /**/.DS_Store
 /**/.log/
+yarn.lock
 *.log

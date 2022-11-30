@@ -1,0 +1,343 @@
+:root {
+  --heather: #aba6be;
+  --white: #fff;
+  --charcoal-grey: #363342;
+  --dark: #242230;
+  --dark-two: #1f1d2c;
+  --heather-two: #8e8aa3;
+  --electric-purple: #8738ff;
+  --wine-red: #6e0823;
+  --darkish-blue: #033089;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-outer {
+  height: calc(100% - .3em);
+  flex-direction: row;
+  padding: 2px;
+}
+
+.flex-container {
+  height: 100%;
+  background: var(--dark-two);
+  border-radius: 0 0 5px 5px;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+}
+
+.flex-item {
+  color: #fff;
+  text-align: center;
+  background: var(--dark-two);
+  border-radius: 5px;
+  margin: 1px;
+  padding: 5px;
+}
+
+#right-pane {
+  width: 12em;
+  word-break: normal;
+  text-align: left;
+  margin-top: 1em;
+  padding: 0 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#left-pane {
+  width: 12em;
+  margin-top: 1em;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#left-pane + img {
+  width: 164px;
+  height: 28px;
+}
+
+svg {
+  margin-top: 2em;
+}
+
+.header {
+  text-align: center;
+  background-color: #31274c;
+  border-radius: 5px 5px 0 0;
+}
+
+#hideMe {
+  animation: 0s ease-in 3s forwards cssAnimation;
+}
+
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+#contentString {
+  color: #000;
+  font-size: .5em;
+  background-color: #0000 !important;
+  padding: 0 !important;
+}
+
+.slider {
+  width: 75%;
+  height: 15px;
+  opacity: .9;
+  -webkit-transition: all .2s;
+  accent-color: #13bba4;
+  background: #444;
+  outline: none;
+  transition: opacity .2s;
+  overflow: hidden;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 25px;
+  height: 15px;
+  cursor: pointer;
+  background: url("ic_car_graphic.d7bee817.svg");
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 15px;
+  cursor: pointer;
+  background: url("ic_car_graphic.d7bee817.svg");
+}
+
+#Capa_1 {
+  transform-origin: 50%;
+  transform: rotate(90deg);
+}
+
+code {
+  background-color: #454277;
+}
+
+.floating-head {
+  width: 99.5%;
+  z-index: 5;
+  text-align: center;
+  border: 0 solid #999;
+  margin: 1px;
+  font-family: Roboto, "sans-serif";
+  line-height: 30px;
+  position: absolute;
+  top: 1px;
+}
+
+#pausing {
+  z-index: 5;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #999;
+  margin-bottom: 4px;
+  margin-right: 10px;
+  font-family: Roboto, "sans-serif";
+  line-height: 30px;
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+#showtime {
+  z-index: 5;
+  text-align: center;
+  width: 374px;
+  color: #fff;
+  visibility: hidden;
+  background-color: #1f1d2ceb;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: Roboto, "sans-serif";
+  line-height: 30px;
+  position: fixed;
+  top: 28px;
+  left: 40%;
+}
+
+#floating-panel {
+  z-index: 5;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #999;
+  line-height: 30px;
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+}
+
+#left-chart {
+  background-color: red;
+}
+
+#right-chart {
+  background-color: #00f;
+}
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  background: #000;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.loader {
+  color: #fff;
+  letter-spacing: 4px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 40%;
+}
+
+.loader:before {
+  content: "";
+  box-sizing: border-box;
+  height: 24px;
+  width: 5.15px;
+  background: currentColor;
+  position: absolute;
+  bottom: 10px;
+  right: 70px;
+}
+
+.loader:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  background: red;
+  border-radius: 50%;
+  animation: 1s ease-in infinite animloader;
+  position: absolute;
+  top: 2px;
+  left: 125px;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translateY(8px)scaleY(1)scaleX(1.25);
+  }
+
+  25%, 75% {
+    transform: translateY(-5px)scaleY(1.2)scaleX(1);
+  }
+
+  50% {
+    transform: translateY(-10px)scaleY(1)scaleX(1);
+  }
+
+  100% {
+    transform: translateY(8px)scaleY(.8)scaleX(.8);
+  }
+}
+
+#demand {
+  font-size: .5em;
+}
+
+.demandSection {
+  background-color: #363342;
+  border: thin solid gray;
+  border-radius: 3px;
+  padding: .5em;
+  font-size: 1em;
+}
+
+.inputs {
+  font-size: .1em;
+}
+
+input {
+  color: #fff;
+  cursor: pointer;
+  background-color: #363342;
+  border: thin solid gray;
+  border-radius: 3px;
+  padding: .5em;
+  font-size: .1em;
+}
+
+label {
+  font-size: .1em;
+}
+
+.gm-style-iw button {
+  display: none !important;
+}
+
+.menu-wrapper {
+  text-align: left;
+  padding: 0 10px 0 16px;
+}
+
+.vision {
+  text-align: center;
+  font-size: 12px;
+}
+
+.menu {
+  cursor: pointer;
+  height: 56px;
+  padding-top: 28px;
+}
+
+.menu img {
+  vertical-align: middle;
+}
+
+input::file-selector-button {
+  color: gray;
+  cursor: pointer;
+  background-color: #363342;
+  border: thin solid gray;
+  border-radius: 3px;
+  padding: .5em;
+  font-weight: bold;
+}
+
+.zoom {
+  z-index: 0;
+  margin: 0 auto;
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  z-index: 1;
+  transform: translateY(-20%)scale(1.5);
+}
+
+/*# sourceMappingURL=index.9e4c6fd2.css.map */
