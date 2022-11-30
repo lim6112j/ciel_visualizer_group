@@ -1,0 +1,11 @@
+Model Information:
+* title:	Taxi Low Poly
+* source:	https://sketchfab.com/3d-models/taxi-low-poly-c0165f18adf846a48ad803fc8f4d0f87
+* author:	TheJester (https://sketchfab.com/The_Jester)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Taxi Low Poly" (https://sketchfab.com/3d-models/taxi-low-poly-c0165f18adf846a48ad803fc8f4d0f87) by TheJester (https://sketchfab.com/The_Jester) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

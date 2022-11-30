@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <title>Mobble Simulator</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.js"></script>
+    <!-- playground-hide -->
+    <script>
+        const process = { env: {} };
+        process.env.GOOGLE_MAPS_API_KEY =
+            "AIzaSyAQkoRaEefK8pUcmb8D46DNfGZwREwcUZ0";
+    </script>
+    <!-- playground-hide-end -->
+
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <script type="module" src="./index.ts"></script>
+</head>
+
+<body>
+    <div class="flex-outer">
+        <!-- <div id="hideme" class="header floating-head flex-item">
+                    <img src="./assets/logo.png?height=60" />
+                    <p>모두를 위한 첫 번째 모빌리티 <span style="color: white;font-weight: bold; ">Mobble</span></p>
+                </div> -->
+        <div class="flex-container">
+            <div id="left-pane" class="flex-item">
+
+                <img src="./assets/ic_mobble_full_logo.png" />
+                <div class="menu-wrapper">
+                    <div class="vision">
+                        <p>모두를 위한 첫번째 모빌리티</p>
+                    </div>
+                    <div class="menu" id="carsStart">
+                        <img src="./assets/ic_simulation_pressed.png" /> <span>&nbsp;&nbsp; Analyzer</span>
+                    </div>
+                    <div class="menu" id="planning"><img src="./assets/ic_demand_normal.png" /> <span>&nbsp;&nbsp;
+                            Planner</span>
+                    </div>
+                    <div class="menu" id="demo"><img src="./assets/ic_path_normal.png" /> <span>&nbsp;&nbsp;
+                            Demonstration</span>
+                    </div>
+                    <div class="menu" id="reset"><img src="./assets/ic_reset_normal.png" /> <span>&nbsp;&nbsp;
+                            Reset</span></div>
+                </div>
+            </div>
+            <div id="map" class="flex-item" style="flex-grow:6"></div>
+            <div id="right-pane" class="flex-item">
+                <div class="inputs">
+                    <label>실주행 파일 : <input type="file" id="runFile"></label><br>
+                    <label>시뮬레이션 파일 : <input type="file" id="simulFile"></label><br>
+                    <label>demand 파일 : <input type="file" id="demandFile"></label><br>
+                </div>
+                <div class="inputs">
+                    <label>query date : <input type="text" , id="queryStr" value="2022-07-21"></label>
+                </div>
+                <div id="queryResult"> </div>
+                <hr>
+                <label>에니메이션속도 : <input type="range" id="speed" min='0' max='100' value='10' step='1'
+                        name='speed'></label>
+                <label id='speedLabel'>10</label>
+                <div>
+                    <label>고객정보 : <input type="checkbox" id="showInfo"></label>
+                </div>
+                <div>
+                    <label>차량정보 : <input type="checkbox" id="showCarInfo"></label>
+                </div>
+                <p> 차량 선택 </p>
+                <div id="vehicle-buttons"></div>
+                <div id="show-trace"></div>
+                <hr>
+                <div id="demand">
+                </div>
+                <!-- <div style="word-wrap: break-word; font-size: 0.1em;">
+                                    <p>실주행 데이터 query</p><code>
+                SELECT t.* FROM mobble_log.supply_location_log_20220628 t ORDER BY get_date
+                                                </code>
+                                </div>
+                                <div style="word-wrap: break-word; font-size: 0.1em;">
+                                    <p>시뮬레이션 데이터 query</p><code>SELECT * FROM mobble_log.supply_waypoint_path_log_202206 l
+                WHERE to_char(l.get_date, 'YYYY-MM-DD') LIKE '${query}'
+                ORDER BY l.get_date, l.waypoint_seq
+
+                                                </code>
+                                </div>
+                                <div style="word-wrap: break-word; font-size: 0.1em;">
+                                    <p>demand 데이터 query</p><code>
+                                    SELECT t.*
+                               FROM mobble_dispatcher.demand t
+                               WHERE to_char(picked_date, 'YYYY-MM-DD') = '2022-06-23'
+                               ORDER BY picked_date
+                                                </code>
+                                </div>
+                 -->
+                <div id="data">
+                    <p id="timestamp"></p>
+                    <!-- <p> <span>Avg Travel Time : </span> <span id="avgTTime"></span></p>
+                                        <p> <span>Bus : </span> <span id="busId">---</span></p>
+                                        <p> <span>Users: </span><span id="customerNum">---</span> -->
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="showtime">
+
+    </div>
+    <div id="pausing"></div>
+    <div id="floating-panel">
+        <div class="flex-container">
+            <div id="left-chart" class="flex-item zoom" style="flex-grow: 2;">
+            </div>
+            <div id="middle-chart" class="flex-item zoom" style="flex-grow: 2;">
+            </div>
+            <div id="right-chart" class="flex-item zoom" style="flex-grow: 2;">
+            </div>
+        </div>
+    </div>
+    <div id="overlay">
+        <span class="loader">Load&nbsp;ng</span>
+    </div>
+    <!--
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+</body>
+
+</html>

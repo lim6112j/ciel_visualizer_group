@@ -1,0 +1,329 @@
+/*
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map.
+ */
+/* #map { */
+/*   height: 100%; */
+/* } */
+
+/*
+ * Optional: Makes the sample page fill the window.
+ */
+:root {
+  --heather: #aba6be;
+  --white: #fff;
+  --charcoal-grey: #363342;
+  --dark: #242230;
+  --dark-two: #1f1d2c;
+  --heather-two: #8e8aa3;
+  --electric-purple: #8738ff;
+  --wine-red: #6e0823;
+  --darkish-blue: #033089;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.flex-outer {
+  flex-direction: row;
+  height: calc(100% - 0.3em);
+  padding: 2px;
+}
+.flex-container {
+  height: 100%;
+  border-radius: 0 0 5px 5px;
+  background: var(--dark-two);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between ;
+}
+.flex-item {
+  margin: 1px;
+  padding: 5px;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  background: var(--dark-two);
+}
+#right-pane {
+  width: 12em;
+  word-break: normal;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: left;
+  margin-top: 1em;
+  padding: 0 10 0 10;
+}
+#left-pane {
+  margin-top: 1em;
+  width: 12em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#left-pane + img {
+  width: 164;
+  height: 28
+}
+svg {
+  margin-top: 2em;
+}
+
+.header{
+  background-color: #31274c;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+}
+#hideMe {
+    -moz-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 3s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+#contentString {
+  font-size: 0.5em;
+  color: #000;
+  padding: 0!important;
+  background-color: transparent!important;
+}
+.slider {
+  /* -webkit-appearance: none; */
+  overflow: hidden;
+  width: 75%;
+  height: 15px;
+  background: #444;
+  outline: none;
+  opacity: 0.9;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  accent-color: #13bba4;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+/* .slider::-webkit-slider-runnable-track { */
+/*       -webkit-appearance: none; */
+/*       background: #13bba4; */
+/*       margin-top: -1px; */
+/*  } */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 15px;
+  background: url('assets/ic_car_graphic.svg');
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 15px;
+  background: url(assets/ic_car_graphic.svg);
+  cursor: pointer;
+}
+#Capa_1 {
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+}
+code {
+  background-color: #454277;
+}
+
+.floating-head {
+  position: absolute;
+  margin: 1px;
+  width: 99.5%;
+  top: 1px;
+  z-index: 5;
+  border: 0px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+}
+#pausing {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  margin-right: 10;
+  margin-bottom: 4;
+  z-index: 5;
+  background-color: #fff;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+}
+#showtime {
+  position: fixed;
+  top: 28px;
+  left: 40%;
+  z-index: 5;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  width: 374px;
+  padding: 10;
+  border-radius: 10px;
+  background-color: rgba(31, 29, 44, 0.92);
+  color: white;
+  visibility: hidden;
+
+}
+#floating-panel {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  z-index: 5;
+  background-color: #fff;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 30px;
+}
+#left-chart {
+  background-color: red;
+}
+#right-chart {
+  background-color: blue;
+}
+#overlay{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: .5;
+    display: none;
+}
+.loader {
+  left: 40%;
+  top: 50%;
+  color: #FFF;
+  position: relative;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  letter-spacing: 4px;
+  box-sizing: border-box;
+}
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  right: 70px;
+  bottom: 10px;
+  height: 24px;
+  width: 5.15px;
+  background: currentColor;
+}
+.loader::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  left: 125px;
+  top: 2px;
+  border-radius: 50%;
+  background: red;
+  box-sizing: border-box;
+  animation: animloader 1s ease-in infinite;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translateY(8px) scaleY(1) scaleX(1.25);
+  }
+  25%, 75% {
+    transform: translateY(-5px) scaleY(1.2) scaleX(1);
+  }
+  50% {
+    transform: translateY(-10px) scaleY(1) scaleX(1);
+  }
+  100% {
+    transform: translateY(8px) scaleY(0.8) scaleX(0.8);
+  }
+}
+#demand {
+  font-size: 0.5em;
+}
+.demandSection {
+  font-size: 1em;
+  border: thin solid grey;
+  border-radius: 3px;
+  background-color: #363342;
+  padding: 0.5em;
+}
+.inputs {
+  font-size: 0.1em;
+}
+input {
+  color: white;
+  font-size: 0.1em;
+  cursor: pointer;
+  padding: 0.5em;
+  border: thin solid grey;
+  border-radius: 3px;
+  background-color: #363342;
+}
+label {
+  font-size: 0.1em;
+}
+.gm-style-iw button {display: none!important;}
+
+.menu-wrapper {
+  padding: 0 10 0 16;
+  text-align: left;
+
+}
+.vision {
+  font-size: 12px;
+  text-align: center;
+}
+.menu {
+  cursor: pointer;
+  height: 56px;
+  padding-top: 28px;
+}
+.menu img {
+  vertical-align:middle;
+}
+input::file-selector-button {
+    font-weight: bold;
+    color:grey;
+    padding: 0.5em;
+    border: thin solid grey;
+    border-radius: 3px;
+    background-color: #363342;
+    cursor: pointer;
+}
+.zoom {
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
+  z-index: 0;
+}
+
+.zoom:hover {
+  transform: translateY(-20%) scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  z-index: 1;
+}

@@ -1,0 +1,8 @@
+:host = localhost:3000
+
+ # api demand data
+GET http://:host/demand/2022-06-23
+# api simulation data
+GET http://:host/simulation/2022-06-23
+# api travel data
+GET http://:host/travel/2022-06-23

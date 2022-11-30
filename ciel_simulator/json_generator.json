@@ -1,0 +1,30 @@
+// json-generator : https://json-generator.com/
+[
+    '{{repeat(5, 7)}}',
+    {
+    busId : '{{objectId()}}',
+      path : [
+        '{{repeat(5, 7)}}',
+        {
+            lat: '{{floating(37, 38)}}',
+            lng: '{{floating(127.00001, 128)}}',
+          timestamp: '{{date(new Date(2022,9,6, 6), new Date(2022, 9,6, 24))}}'
+        }
+    ]
+    }
+]
+
+// users
+[
+    '{{repeat(5, 7)}}',
+    {
+    userId : '{{objectId()}}',
+      path : [
+        '{{repeat(2, 2)}}',
+        {
+          stationId: '{{integer(1,10)}}',
+          timestamp: '{{date(new Date(2022,9,6, 6), new Date(2022, 9,6, 24))}}'
+        }
+    ]
+    }
+]

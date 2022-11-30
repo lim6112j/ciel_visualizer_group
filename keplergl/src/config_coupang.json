@@ -1,0 +1,152 @@
+{
+  "version": "v1",
+  "config": {
+    "visState": {
+      "filters": [
+        {
+          "dataId": [
+            "ywnwlldya"
+          ],
+          "id": "5hnkfjm89",
+          "name": [
+            "탑승시간"
+          ],
+          "type": "range",
+          "value": [
+            415,
+            2000
+          ],
+          "enlarged": false,
+          "plotType": "histogram",
+          "yAxis": null
+        }
+      ],
+      "layers": [
+        {
+          "id": "46zxaqk",
+          "type": "arc",
+          "config": {
+            "dataId": "ywnwlldya",
+            "label": "new layer",
+            "color": [
+              82,
+              163,
+              83
+            ],
+            "columns": {
+              "lat0": "x좌표",
+              "lng0": "y좌표",
+              "lat1": "하차_x좌표",
+              "lng1": "하차_y좌표"
+            },
+            "isVisible": true,
+            "visConfig": {
+              "opacity": 0.8,
+              "thickness": 0.8,
+              "colorRange": {
+                "name": "Global Warming",
+                "type": "sequential",
+                "category": "Uber",
+                "colors": [
+                  "#5A1846",
+                  "#900C3F",
+                  "#C70039",
+                  "#E3611C",
+                  "#F1920E",
+                  "#FFC300"
+                ]
+              },
+              "sizeRange": [
+                0,
+                10
+              ],
+              "targetColor": [
+                223,
+                73,
+                22
+              ]
+            },
+            "textLabel": [
+              {
+                "field": null,
+                "color": [
+                  255,
+                  255,
+                  255
+                ],
+                "size": 18,
+                "offset": [
+                  0,
+                  0
+                ],
+                "anchor": "start",
+                "alignment": "center"
+              }
+            ]
+          },
+          "visualChannels": {
+            "colorField": null,
+            "colorScale": "quantile",
+            "sizeField": null,
+            "sizeScale": "linear"
+          }
+        }
+      ],
+      "interactionConfig": {
+        "tooltip": {
+          "fieldsToShow": {
+            "ywnwlldya": [
+              "센터명",
+              "탑승일",
+              "노선명",
+              "근무조",
+              "탑승자ID"
+            ]
+          },
+          "enabled": true
+        },
+        "brush": {
+          "size": 0.5,
+          "enabled": false
+        },
+        "coordinate": {
+          "enabled": false
+        }
+      },
+      "layerBlending": "normal",
+      "splitMaps": [],
+      "animationConfig": {
+        "currentTime": null,
+        "speed": 1
+      }
+    },
+    "mapState": {
+      "bearing": 24,
+      "dragRotate": true,
+      "latitude": 37.35941668073432,
+      "longitude": 127.31526774872151,
+      "pitch": 50,
+      "zoom": 8.553054239546231,
+      "isSplit": false
+    },
+    "mapStyle": {
+      "styleType": "dark",
+      "topLayerGroups": {},
+      "visibleLayerGroups": {
+        "label": true,
+        "road": true,
+        "border": false,
+        "building": true,
+        "water": true,
+        "land": true,
+        "3d building": false
+      },
+      "threeDBuildingColor": [
+        9.665468314072013,
+        17.18305478057247,
+        31.1442867897876
+      ],
+      "mapStyles": {}
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "animate_symbol",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "server": "node server/server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/d3": "^7.4.0",
+    "@types/jest": "^29.2.0",
+    "@types/node": "^18.7.1",
+    "@types/three": "^0.143.1",
+    "assert": "^2.0.0",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.3.0",
+    "https-browserify": "^1.0.0",
+    "jest": "^29.2.2",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "parcel-reporter-static-files-copy": "^1.4.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "querystring-es3": "^0.2.1",
+    "sharp": "^0.29.3",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "ts-jest": "^29.0.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4",
+    "url": "^0.11.0",
+    "util": "^0.12.4"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.1.0",
+    "@fastify/static": "^6.5.0",
+    "@googlemaps/js-api-loader": "^1.14.3",
+    "@googlemaps/markerclusterer": "^2.0.10",
+    "@observablehq/plot": "^0.5.2",
+    "@reactivex/rxjs": "^6.6.7",
+    "@types/google-maps": "^3.2.3",
+    "@types/lodash": "^4.14.185",
+    "d3": "^7.6.1",
+    "fastify": "^4.7.0",
+    "google-maps": "^4.3.3",
+    "lodash": "^4.17.21",
+    "parcel": "^2.7.0",
+    "pg": "^8.8.0",
+    "rxjs": "^7.5.6",
+    "s": "^1.0.0",
+    "three": "^0.143.0"
+  },
+  "staticFiles": {
+    "staticOutPath": "./assets/models",
+    "staticPath": "./assets/models"
+  }
+}
