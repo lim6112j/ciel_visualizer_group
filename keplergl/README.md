@@ -2,11 +2,18 @@
 
 1 clone project
 1 make file named '.env.local'
-1 put mapbox apikey below in .env.local
+1 put mapbox apikey below in bb.env.local
 
     REACT_APP_MAPBOX_API=pk.exxxxxxxxxxxxxxxxxx
 
 1 yarn start
+
+# save config
+
+open brower
+save button click
+audo download kepler.gl.json
+move kepler.gl.json to src folder
 
 # Kepler Demo
 
